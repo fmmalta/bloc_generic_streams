@@ -3,19 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'home_bloc.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  HomeBloc _bloc;
-
-  @override
-  void initState() {
-    _bloc = HomeBloc();
-    super.initState();
-  }
+class HomeScreen extends StatelessWidget {
+  final HomeBloc _bloc = HomeBloc();
 
   @override
   Widget build(BuildContext context) {
