@@ -4,25 +4,29 @@ import 'package:rxdart/rxdart.dart';
 import '../bloc_generic_streams.dart';
 
 class GenericStream<T> extends BlocBase {
-  GenericStream() : _subject = BehaviorSubject<T>();
+  GenericStream()
+      : _behaviorSubject = BehaviorSubject<T>(),
+        _publishSubject = PublishSubject<T>();
 
   GenericStream.seeded({@required T seed})
-      : _subject = BehaviorSubject<T>.seeded(seed);
+      : _behaviorSubject = BehaviorSubject<T>.seeded(seed),
+        _publishSubject = PublishSubject<T>();
 
-  final BehaviorSubject<T> _subject;
+  final BehaviorSubject<T> _behaviorSubject;
+  final PublishSubject<T> _publishSubject;
 
-  Function(T) get sink => _subject.sink.add;
+  Function(T) get sink => _behaviorSubject.sink.add;
 
-  ValueStream<T> get stream => _subject.shareValue();
+  ValueStream<T> get stream => _behaviorSubject.shareValue();
 
-  ValueStream<T> get streamDebounce => _subject
+  ValueStream<T> get streamDebounce => _behaviorSubject
       .debounce(
         (_) => TimerStream<dynamic>(true, const Duration(milliseconds: 1500)),
       )
       .shareValue();
 
-  T get value => _subject.value;
+  T get value => _behaviorSubject.value;
 
   @override
-  void dispose() => _subject?.close();
+  void dispose() => _behaviorSubject?.close();
 }

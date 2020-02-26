@@ -1,3 +1,7 @@
+## [1.0.3] - 26/02/2020
+
+* Updated README.md
+
 ## [1.0.2] - 26/02/2020
 
 * Refactor GenericBloc class to GenericStream class
