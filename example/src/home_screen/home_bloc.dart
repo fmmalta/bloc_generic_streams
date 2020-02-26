@@ -3,7 +3,7 @@ import 'package:bloc_generic_streams/src/bloc_provider.dart';
 
 class HomeBloc extends BlocBase {
   int counter = 0;
-  final GenericBloc<int> counterStream = GenericBloc<int>();
+  final GenericStream<int> counterStream = GenericStream<int>();
 
   void incrementCounter() {
     counterStream.sink(++counter);

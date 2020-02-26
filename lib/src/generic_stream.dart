@@ -1,11 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../bloc_generic_streams.dart';
 
-class GenericBloc<T> extends BlocBase {
-  GenericBloc() : _subject = BehaviorSubject<T>();
+class GenericStream<T> extends BlocBase {
+  GenericStream() : _subject = BehaviorSubject<T>();
 
-  GenericBloc.seeded({T seed}) : _subject = BehaviorSubject<T>.seeded(seed);
+  GenericStream.seeded({@required T seed})
+      : _subject = BehaviorSubject<T>.seeded(seed);
 
   final BehaviorSubject<T> _subject;
 
