@@ -1,3 +1,7 @@
+## [1.0.1] - 26/02/2020
+
+* Make some unnecessary fields private
+
 ## [1.0.0] - 26/02/2020
 
 * Fully working
