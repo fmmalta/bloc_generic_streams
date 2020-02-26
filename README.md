@@ -6,6 +6,7 @@ I built this package because when you have an application like an Uber applicati
 
 OBS: I'll implement other subjects, like Publish and Replay subject.
 ## Example:
+```dart
     import 'package:bloc_generic_streams/bloc_generic_streams.dart';
     
     class HomeBloc extends BlocBase {
@@ -20,7 +21,8 @@ OBS: I'll implement other subjects, like Publish and Replay subject.
       void dispose() {
         counterStream?.dispose();
       }
-    }    
+    }
+```
 
 counterStream variable contains all most important methods exposed, like:
 - sink (StreamSink)
@@ -28,8 +30,8 @@ counterStream variable contains all most important methods exposed, like:
 - stream debounce (1500 ms)
 
 ## How to use BlocProvider?
-
-    class HomeScreen extends StatelessWidget {
+```dart
+class HomeScreen extends StatelessWidget {
 	//Instantiate our bloc... HomeBloc in our case
       final HomeBloc _bloc = HomeBloc();
     
@@ -62,15 +64,18 @@ counterStream variable contains all most important methods exposed, like:
         );
       }
     }
-
+```
 Now it's very easy to implement a BLoC class and to manipulate the way you want.
 
 ## Retrieving Bloc
 
 Follow the same pattern from other packages, like this:
-
-    final HomeBloc _bloc = BlocProvider.of<HomeBloc>(context);
+```dart
+final HomeBloc _bloc = BlocProvider.of<HomeBloc>(context);
+```
 
 With that, you can access and retrieved any stream/method inside your Bloc.
 
 
+
+__
