@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-typedef BlocBuilder<T> = T Function();
-typedef BlocDisposer<T> = Function(T);
+typedef _BlocBuilder<T> = T Function();
+typedef _BlocDisposer<T> = Function(T);
 
 abstract class BlocBase {
   void dispose();
@@ -16,8 +16,8 @@ class BlocProvider<T extends BlocBase> extends StatefulWidget {
   }) : super(key: key);
 
   final Widget child;
-  final BlocBuilder<T> blocBuilder;
-  final BlocDisposer<T> blocDisposer;
+  final _BlocBuilder<T> blocBuilder;
+  final _BlocDisposer<T> blocDisposer;
 
   @override
   _BlocProvider<T> createState() => _BlocProvider<T>();
