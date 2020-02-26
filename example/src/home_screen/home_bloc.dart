@@ -1,4 +1,4 @@
-import 'package:bloc_generic_streams/my_bloc_provider.dart';
+import 'package:bloc_generic_streams/bloc_generic_streams.dart';
 import 'package:bloc_generic_streams/src/bloc_provider.dart';
 
 class HomeBloc extends BlocBase {

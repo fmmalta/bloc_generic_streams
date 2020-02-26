@@ -1,6 +1,6 @@
 import 'package:rxdart/rxdart.dart';
 
-import '../my_bloc_provider.dart';
+import '../bloc_generic_streams.dart';
 
 class GenericBloc<T> extends BlocBase {
   GenericBloc() : _subject = BehaviorSubject<T>();
