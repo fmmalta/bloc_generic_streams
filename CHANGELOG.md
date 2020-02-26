@@ -1,4 +1,4 @@
-## [1.0.5] - 26/02/2020
+## [1.0.6] - 26/02/2020
 
 * Updated README.md and added MIT license
 
