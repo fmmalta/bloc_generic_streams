@@ -28,17 +28,20 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: _bloc.incrementCounter,
           child: Icon(Icons.add),
         ),
-        body: Column(
-          children: <Widget>[
-            Text('Click on the FAB button to increment the value above:'),
-            StreamBuilder<int>(
-              initialData: _bloc.counter,
-              stream: _bloc.counterStream.stream,
-              builder: (_, AsyncSnapshot<int> snapshot) {
-                return Text('${snapshot.data}');
-              },
-            ),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Click on the FAB button to increment the value above:'),
+              StreamBuilder<int>(
+                initialData: _bloc.counter,
+                stream: _bloc.counterStream.stream,
+                builder: (_, AsyncSnapshot<int> snapshot) {
+                  return Text('${snapshot.data}');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
