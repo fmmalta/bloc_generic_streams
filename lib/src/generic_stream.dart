@@ -4,16 +4,12 @@ import 'package:rxdart/rxdart.dart';
 import '../bloc_generic_streams.dart';
 
 class GenericStream<T> extends BlocBase {
-  GenericStream()
-      : _behaviorSubject = BehaviorSubject<T>(),
-        _publishSubject = PublishSubject<T>();
+  GenericStream() : _behaviorSubject = BehaviorSubject<T>();
 
   GenericStream.seeded({@required T seed})
-      : _behaviorSubject = BehaviorSubject<T>.seeded(seed),
-        _publishSubject = PublishSubject<T>();
+      : _behaviorSubject = BehaviorSubject<T>.seeded(seed);
 
   final BehaviorSubject<T> _behaviorSubject;
-  final PublishSubject<T> _publishSubject;
 
   Function(T) get sink => _behaviorSubject.sink.add;
 
