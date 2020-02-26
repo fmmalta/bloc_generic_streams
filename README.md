@@ -1,6 +1,6 @@
 # Bloc Generic Streams
 
-This package was create to be an easy implementation of Didier Booleans's BlocProvider and including a new way to use a BehaviorSubject using GenericStream class that creates an object more simple with Dart's Generics.
+This package was create to be an easy implementation of Didier Boelens's BlocProvider and including a new way to use a BehaviorSubject using GenericStream class that creates an object more simple with Dart's Generics.
 
 I built this package because when you have an application like an Uber application, which was my case, others bloc packages didn't attended my expectations, so, I created this, more simple and more intuitive. You only need to create your Bloc extending BlocBase and then creating a BlocProvider in whatever screen you desire.
 
