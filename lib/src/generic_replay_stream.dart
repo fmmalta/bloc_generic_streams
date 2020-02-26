@@ -3,10 +3,10 @@ import 'package:rxdart/rxdart.dart';
 
 import '../bloc_generic_streams.dart';
 
-class GenericBehaviorSubj<T> extends BlocBase {
-  GenericBehaviorSubj() : _replaySubject = ReplaySubject<T>();
+class GenericReplaySubj<T> extends BlocBase {
+  GenericReplaySubj() : _replaySubject = ReplaySubject<T>();
 
-  GenericBehaviorSubj.seeded({@required T seed})
+  GenericReplaySubj.seeded({@required T seed})
       : _replaySubject = ReplaySubject<T>();
 
   final ReplaySubject<T> _replaySubject;
