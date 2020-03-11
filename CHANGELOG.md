@@ -1,3 +1,7 @@
+## [1.1.0] - 11/03/2020
+
+* Added PublishSubject & ReplaySubject
+
 ## [1.0.8] - 26/02/2020
 
 * Updated README.md and added MIT license
