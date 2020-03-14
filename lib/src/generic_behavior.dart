@@ -5,10 +5,10 @@ import 'package:rxdart/rxdart.dart';
 
 import '../bloc_generic_streams.dart';
 
-class BehaviorStream<T> extends BlocBase {
-  BehaviorStream() : _behaviorSubject = BehaviorSubject<T>();
+class GenericBehavior<T> extends BlocBase {
+  GenericBehavior() : _behaviorSubject = BehaviorSubject<T>();
 
-  BehaviorStream.seeded({@required T seed})
+  GenericBehavior.seeded({@required T seed})
       : _behaviorSubject = BehaviorSubject<T>.seeded(seed);
 
   final BehaviorSubject<T> _behaviorSubject;

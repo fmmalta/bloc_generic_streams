@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc_generic_streams/bloc_generic_streams.dart';
 import 'package:rxdart/rxdart.dart';
 
-class ReplayStream<T> extends BlocBase {
-  ReplayStream() : _replaySubject = ReplaySubject();
+class GenericReplay<T> extends BlocBase {
+  GenericReplay() : _replaySubject = ReplaySubject();
 
   final ReplaySubject _replaySubject;
 

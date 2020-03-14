@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc_generic_streams/bloc_generic_streams.dart';
 import 'package:rxdart/rxdart.dart';
 
-class PublishStream<T> extends BlocBase {
-  PublishStream() : _publishSubject = PublishSubject<T>();
+class GenericPublish<T> extends BlocBase {
+  GenericPublish() : _publishSubject = PublishSubject<T>();
 
   final PublishSubject<T> _publishSubject;
 

@@ -11,7 +11,13 @@ OBS: I'll implement other subjects, like Publish and Replay subject.
     
     class HomeBloc extends BlocBase {
       int counter = 0;
-      final GenericStream<int> counterStream = GenericStream<int>();
+      final GenericBehavior<int> counterStream = GenericBehavior<int>();
+
+      // Other Subjects
+
+      //final GenericPublish<int> publishSubject = GenericPublish<int>();
+
+      //final GenericReplay<int> publishSubject = GenericReplay<int>();
     
       void increment() {
         counterStream.sink(++counter);
