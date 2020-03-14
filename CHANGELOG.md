@@ -1,4 +1,8 @@
-## [1.2.0] - 11/03/2020
+## [1.2.1] - 14/03/2020
+
+* Updated README.md
+
+## [1.2.0] - 14/03/2020
 
 * Added PublishSubject & ReplaySubject
 * Updated to GenericBehavior, GenericPublish & GenericReplay

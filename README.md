@@ -4,7 +4,6 @@ This package was create to be an easy implementation of Didier Boelens's BlocPro
 
 I built this package because when you have an application like an Uber application, which was my case, others bloc packages didn't attended my expectations, so, I created this, more simple and more intuitive. You only need to create your Bloc extending BlocBase and then creating a BlocProvider in whatever screen you desire.
 
-OBS: I'll implement other subjects, like Publish and Replay subject.
 ## Example:
 ```dart
     import 'package:bloc_generic_streams/bloc_generic_streams.dart';
