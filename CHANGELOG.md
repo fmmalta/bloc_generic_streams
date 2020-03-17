@@ -1,3 +1,7 @@
+## [1.3.0] - 17/03/2020
+
+* Removed BlocDisposer param.
+
 ## [1.2.1] - 14/03/2020
 
 * Updated README.md

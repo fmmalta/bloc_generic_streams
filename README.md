@@ -45,7 +45,6 @@ class HomeScreen extends StatelessWidget {
 	  //Return a BlocProvider instance specifying its type
         return BlocProvider<HomeBloc>(
           blocBuilder: () => _bloc, // Build and create our bloc
-          blocDisposer: (_) => _bloc?.dispose(), // Dispose when it's not necessary anymore
           child: Scaffold(
             appBar: AppBar(title: Text('Home Screen')),
             floatingActionButton: FloatingActionButton(
@@ -55,7 +54,7 @@ class HomeScreen extends StatelessWidget {
             body: Center(
               child: StreamBuilder<int>(
                 initialData: _bloc.counter,
-				//Retrieving Stream from _bloc's GenericStream object
+                //Retrieving Stream from _bloc's GenericStream object
                 stream: _bloc.counterStream.stream,
                 builder: (_, AsyncSnapshot<int> snapshot) {
                   return Text(

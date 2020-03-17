@@ -10,7 +10,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<HomeBloc>(
       blocBuilder: () => _bloc,
-      blocDisposer: (_) => _bloc?.dispose(),
       child: Scaffold(
         appBar: AppBar(title: Text('Home Screen')),
         floatingActionButton: FloatingActionButton(
