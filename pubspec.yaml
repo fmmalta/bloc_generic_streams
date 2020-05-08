@@ -1,13 +1,13 @@
 name: bloc_generic_streams
 description: A Flutter package to implement Didier Boelens BlocProvider and simplified use of Stream using Dart's Generics.
-version: 1.3.0
+version: 1.3.1
 homepage: https://github.com/fmmalta/bloc_provider_generic_streams
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  rxdart: ^0.23.1
+  rxdart: ^0.24.0
   flutter:
     sdk: flutter
 

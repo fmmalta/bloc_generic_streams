@@ -12,11 +12,9 @@ I built this package because when you have an application like an Uber applicati
       int counter = 0;
       final GenericBehavior<int> counterStream = GenericBehavior<int>();
 
-      // Other Subjects
+      final GenericPublish<int> publishSubject = GenericPublish<int>();
 
-      //final GenericPublish<int> publishSubject = GenericPublish<int>();
-
-      //final GenericReplay<int> publishSubject = GenericReplay<int>();
+      final GenericReplay<int> publishSubject = GenericReplay<int>();
     
       void increment() {
         counterStream.sink(++counter);
@@ -37,12 +35,12 @@ counterStream variable contains all most important methods exposed, like:
 ## How to use BlocProvider?
 ```dart
 class HomeScreen extends StatelessWidget {
-	//Instantiate our bloc... HomeBloc in our case
+      //Instantiate our bloc... HomeBloc in our case
       final HomeBloc _bloc = HomeBloc();
     
       @override
       Widget build(BuildContext context) {
-	  //Return a BlocProvider instance specifying its type
+        //Return a BlocProvider instance specifying its type
         return BlocProvider<HomeBloc>(
           blocBuilder: () => _bloc, // Build and create our bloc
           child: Scaffold(
@@ -79,7 +77,3 @@ final HomeBloc _bloc = BlocProvider.of<HomeBloc>(context);
 ```
 
 With that, you can access and retrieved any stream/method inside your Bloc.
-
-
-
-__

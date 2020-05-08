@@ -1,3 +1,7 @@
+## [1.3.1] - 08/05/2020
+
+* Updated RxDart to 0.24.0 and updated README.md
+
 ## [1.3.0] - 17/03/2020
 
 * Removed BlocDisposer param.
