@@ -24,6 +24,10 @@ class GenericReplay<T> extends BlocBase {
     if (!isClosed) _replaySubject.add(event);
   }
 
+  void addError(Object error, [StackTrace stackTrace]) {
+    if (!isClosed) _replaySubject.addError(error, stackTrace);
+  }
+
   @override
   void dispose() {
     _replaySubject?.close();

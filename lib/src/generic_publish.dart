@@ -24,6 +24,10 @@ class GenericPublish<T> extends BlocBase {
     if (!isClosed) _publishSubject.add(event);
   }
 
+  void addError(Object error, [StackTrace stackTrace]) {
+    if (!isClosed) _publishSubject.addError(error, stackTrace);
+  }
+
   @override
   void dispose() {
     _publishSubject?.close();

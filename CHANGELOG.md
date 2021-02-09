@@ -1,8 +1,8 @@
-## [1.4.0] - 09/02/2020
+## [1.4.1] - 09/02/2020
 
 * Updated rxdart to 0.25.0
 * Added working example/ folder
-* Added `isClosed` and `.add` method to all implementations
+* Added `isClosed`, `.add` and `.addError` methods to all implementations
 
 ## [1.3.1] - 08/05/2020
 
