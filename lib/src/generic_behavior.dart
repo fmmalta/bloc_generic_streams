@@ -20,12 +20,14 @@ class GenericBehavior<T> extends BlocBase {
   Stream<T> get streamDebounce =>
       _behaviorSubject.debounceTime(const Duration(milliseconds: 1500));
 
-//  Stream<T> get streamDebounce => _behaviorSubject.debounce(
-//        (_) => TimerStream<dynamic>(true, const Duration(milliseconds: 1500)),
-//      );
+  bool get isClosed => _behaviorSubject.isClosed;
+
+  void add(T event) {
+    if (!isClosed) _behaviorSubject.add(event);
+  }
 
   T get value => _behaviorSubject.value;
 
   @override
-  void dispose() => _behaviorSubject?.close();
+  void dispose() => _behaviorSubject.close();
 }
