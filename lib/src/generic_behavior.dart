@@ -26,6 +26,10 @@ class GenericBehavior<T> extends BlocBase {
     if (!isClosed) _behaviorSubject.add(event);
   }
 
+  void addError(Object error, [StackTrace stackTrace]) {
+    if (!isClosed) _behaviorSubject.addError(error, stackTrace);
+  }
+
   T get value => _behaviorSubject.value;
 
   @override
