@@ -1,7 +1,8 @@
-import 'package:bloc_generic_streams/bloc_generic_streams.dart';
+import 'package:example/home_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:bloc_generic_streams/bloc_generic_streams.dart';
 
-import 'home_bloc.dart';
+void main() => runApp(App());
 
 class HomeScreen extends StatelessWidget {
   final HomeBloc _bloc = HomeBloc();
@@ -33,5 +34,12 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: HomeScreen());
   }
 }
