@@ -18,6 +18,10 @@ class GenericReplay<T> extends BlocBase {
 
   List<T> get value => _replaySubject.values;
 
+  bool get isClosed => _replaySubject.isClosed;
+
+  bool get isOpen => !isClosed;
+
   @override
   void dispose() {
     _replaySubject?.close();

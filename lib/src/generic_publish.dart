@@ -18,6 +18,10 @@ class GenericPublish<T> extends BlocBase {
 
   T get value => _publishSubject.publishValue().value;
 
+  bool get isClosed => _publishSubject.isClosed;
+
+  bool get isOpen => !isClosed;
+
   @override
   void dispose() {
     _publishSubject?.close();
