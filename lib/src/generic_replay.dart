@@ -20,7 +20,9 @@ class GenericReplay<T> extends BlocBase {
 
   bool get isClosed => _replaySubject.isClosed;
 
-  bool get isOpen => !isClosed;
+  void add(T event) {
+    if (!isClosed) _replaySubject.add(event);
+  }
 
   @override
   void dispose() {

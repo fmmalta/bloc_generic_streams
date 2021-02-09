@@ -22,10 +22,12 @@ class GenericBehavior<T> extends BlocBase {
 
   bool get isClosed => _behaviorSubject.isClosed;
 
-  bool get isOpen => !isClosed;
+  void add(T event) {
+    if (!isClosed) _behaviorSubject.add(event);
+  }
 
   T get value => _behaviorSubject.value;
 
   @override
-  void dispose() => _behaviorSubject?.close();
+  void dispose() => _behaviorSubject.close();
 }

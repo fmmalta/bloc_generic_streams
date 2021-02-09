@@ -8,7 +8,7 @@ class HomeBloc extends BlocBase {
   final GenericReplay<double> doubleStream = GenericReplay<double>();
 
   void incrementCounter() {
-    if (counterStream.isOpen) counterStream.sink.add(++counter);
+    counterStream.add(++counter);
   }
 
   @override
