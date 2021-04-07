@@ -9,30 +9,30 @@ abstract class BlocBase {
 
 class BlocProvider<T extends BlocBase> extends StatefulWidget {
   const BlocProvider({
-    Key key,
-    @required this.blocBuilder,
+    Key? key,
+    required this.blocBuilder,
     this.blocDisposer,
-    @required this.child,
+    required this.child,
   }) : super(key: key);
 
   final Widget child;
   final _BlocBuilder<T> blocBuilder;
-  final _BlocDisposer<T> blocDisposer;
+  final _BlocDisposer<T>? blocDisposer;
 
   @override
   _BlocProvider<T> createState() => _BlocProvider<T>();
 
-  static T of<T extends BlocBase>(BuildContext context) {
-    _BlocProviderInherited<T> provider = context
-        .getElementForInheritedWidgetOfExactType<_BlocProviderInherited<T>>()
+  static T? of<T extends BlocBase>(BuildContext? context) {
+    InheritedWidget? provider = context
+        ?.getElementForInheritedWidgetOfExactType<_BlocProviderInherited<T>>()
         ?.widget;
-
-    return provider?.bloc;
+    if (provider is _BlocProviderInherited?) return provider?.bloc;
+    return null;
   }
 }
 
 class _BlocProvider<T extends BlocBase> extends State<BlocProvider<T>> {
-  T bloc;
+  T? bloc;
 
   @override
   void initState() {
@@ -53,10 +53,10 @@ class _BlocProvider<T extends BlocBase> extends State<BlocProvider<T>> {
 }
 
 class _BlocProviderInherited<T> extends InheritedWidget {
-  _BlocProviderInherited({Key key, @required Widget child, this.bloc})
+  _BlocProviderInherited({Key? key, required Widget child, this.bloc})
       : super(key: key, child: child);
 
-  final T bloc;
+  final T? bloc;
 
   @override
   bool updateShouldNotify(_BlocProviderInherited oldWidget) => false;

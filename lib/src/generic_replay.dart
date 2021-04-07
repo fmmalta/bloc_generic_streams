@@ -4,9 +4,9 @@ import 'package:bloc_generic_streams/bloc_generic_streams.dart';
 import 'package:rxdart/rxdart.dart';
 
 class GenericReplay<T> extends BlocBase {
-  GenericReplay() : _replaySubject = ReplaySubject();
+  GenericReplay() : _replaySubject = ReplaySubject<T>();
 
-  final ReplaySubject _replaySubject;
+  final ReplaySubject<T> _replaySubject;
 
   StreamSink<T> get sink => _replaySubject.sink;
 
@@ -24,12 +24,12 @@ class GenericReplay<T> extends BlocBase {
     if (!isClosed) _replaySubject.add(event);
   }
 
-  void addError(Object error, [StackTrace stackTrace]) {
+  void addError(Object error, [StackTrace? stackTrace]) {
     if (!isClosed) _replaySubject.addError(error, stackTrace);
   }
 
   @override
   void dispose() {
-    _replaySubject?.close();
+    _replaySubject.close();
   }
 }

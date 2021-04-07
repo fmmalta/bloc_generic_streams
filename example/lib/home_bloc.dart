@@ -13,8 +13,8 @@ class HomeBloc extends BlocBase {
 
   @override
   void dispose() {
-    counterStream?.dispose();
-    stringStream?.dispose();
-    doubleStream?.dispose();
+    counterStream.dispose();
+    stringStream.dispose();
+    doubleStream.dispose();
   }
 }

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../bloc_generic_streams.dart';
@@ -8,7 +7,7 @@ import '../bloc_generic_streams.dart';
 class GenericBehavior<T> extends BlocBase {
   GenericBehavior() : _behaviorSubject = BehaviorSubject<T>();
 
-  GenericBehavior.seeded({@required T seed})
+  GenericBehavior.seeded({required T seed})
       : _behaviorSubject = BehaviorSubject<T>.seeded(seed);
 
   final BehaviorSubject<T> _behaviorSubject;
@@ -26,11 +25,11 @@ class GenericBehavior<T> extends BlocBase {
     if (!isClosed) _behaviorSubject.add(event);
   }
 
-  void addError(Object error, [StackTrace stackTrace]) {
+  void addError(Object error, [StackTrace? stackTrace]) {
     if (!isClosed) _behaviorSubject.addError(error, stackTrace);
   }
 
-  T get value => _behaviorSubject.value;
+  T? get value => _behaviorSubject.value;
 
   @override
   void dispose() => _behaviorSubject.close();
